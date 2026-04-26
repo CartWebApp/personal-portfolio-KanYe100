@@ -1,0 +1,134 @@
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.01);
+    }
+}
+
+
+* {
+    margin: 0;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(background.png);
+    background-repeat: repeat-y;
+    background-size: 100%;
+    gap: 2vh;
+    margin-top: 2vh;
+}
+
+.nav {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #373737c2;
+    border-radius: 20px;
+
+    &>ol {
+        display: flex;
+        list-style-type: none;
+        gap: 20px;
+
+        &>li:hover {
+            text-decoration: underline;
+        }
+
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 90%;
+    height: 800px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    &>p {
+        text-decoration: underline;
+        font-size: 25px;
+    }
+
+    &>section {
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+        gap: 20px;
+
+        &>h1 {
+            font-size: 100px;
+            text-align: center;
+        }
+
+        &>article {
+            width: 700px;
+            font-size: 30px;
+        }
+    }
+}
+
+#projects-main {
+
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+
+    &>h1 {
+        text-decoration: underline;
+        
+    }
+
+    &>section {
+        display: flex;
+        width: 1000px;
+        height: 300px;
+        align-items: center;
+        justify-content: center;
+
+        &>div {
+            width: 400px;
+            height: 250px;
+            background-color: blue;
+        }
+
+        &>article {
+            width: 400px;
+            height: 250px;
+            background-color: black;
+        }
+    }
+}
+
+#project-image:hover {
+    animation: scaleUp 0.1s ease forwards;
+}
+
+.one {
+    flex-direction: row;
+    background-color: rgb(94, 255, 0);
+    display: flex;
+}   
+
+.two {
+    flex-direction: row;
+    background-color: aquamarine;
+    display: flex;
+}
