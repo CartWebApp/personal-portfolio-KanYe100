@@ -17,13 +17,13 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: red;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-image: url(background.png);
-    background-repeat: repeat-y;
-    background-size: 100%;
+    background-image: url(/images/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+
     gap: 2vh;
     margin-top: 2vh;
 }
@@ -55,14 +55,19 @@ a {
 
 main {
     width: 90%;
-    height: 800px;
-    background-color: red;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+
+    background-color: #373737c2;
+    border-radius: 20px;
 
     &>p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
         text-decoration: underline;
         font-size: 25px;
     }
@@ -70,7 +75,7 @@ main {
     &>section {
         display: flex;
         flex-direction: column;
-        height: 600px;
+        height: fit-content;
         gap: 20px;
 
         &>h1 {
@@ -85,50 +90,46 @@ main {
     }
 }
 
-#projects-main {
+.projects {
 
     display: flex;
     justify-content: space-between;
     height: fit-content;
-
-    &>h1 {
+    &>h2 {
         text-decoration: underline;
-        
+        margin-top: 5vh;
+        text-align: center;
     }
 
     &>section {
         display: flex;
-        width: 1000px;
-        height: 300px;
+        width: 1500px;
+        height: 500px;
         align-items: center;
-        justify-content: center;
+        gap: 10px;
 
         &>div {
-            width: 400px;
-            height: 250px;
-            background-color: blue;
+            width: 800px;
+            height: 500px;
+            background-color: rgb(32, 32, 32);
         }
 
         &>article {
-            width: 400px;
-            height: 250px;
-            background-color: black;
+            width: 800px;
+            height: 500px;
+            background-color: rgba(129, 129, 129, 0.252);
+            font-size: 30px;
         }
     }
 }
 
-#project-image:hover {
-    animation: scaleUp 0.1s ease forwards;
+.project-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
 }
 
-.one {
-    flex-direction: row;
-    background-color: rgb(94, 255, 0);
-    display: flex;
-}   
-
-.two {
-    flex-direction: row;
-    background-color: aquamarine;
-    display: flex;
+.project-image:hover {
+    animation: scaleUp 0.1s ease forwards;
 }
