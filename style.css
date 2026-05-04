@@ -8,10 +8,21 @@
     }
 }
 
+@keyframes scaleUp2 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
 
 * {
     margin: 0;
-    color: white;
+    color: azure;
+    font-family: sans-serif;
 }
 
 body {
@@ -20,7 +31,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-image: url(/images/background.png);
+    background-image: url(images/background.png);
     background-size: cover;
     background-attachment: fixed;
 
@@ -34,8 +45,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #373737c2;
+    background-color: #00000072;
     border-radius: 20px;
+    font-weight: bolder;
 
     &>ol {
         display: flex;
@@ -43,7 +55,8 @@ body {
         gap: 20px;
 
         &>li:hover {
-            text-decoration: underline;
+            text-decoration: underline azure;
+            animation: scaleUp2 0.1s ease-out forwards;
         }
 
     }
@@ -59,9 +72,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-bottom: 5vh;
 
-    background-color: #373737c2;
+    background-color: #00000072;
     border-radius: 20px;
 
     &>p {
@@ -69,7 +83,6 @@ main {
         justify-content: center;
         align-items: center;
         height: 100px;
-        text-decoration: underline;
         font-size: 25px;
     }
 
@@ -91,15 +104,24 @@ main {
     }
 }
 
+.aboutme {
+    &>article {
+        &>p {
+            font-size: 25px;
+        }
+    }
+}
+
 .projects {
 
     display: flex;
     justify-content: space-between;
     height: fit-content;
+
     &>h2 {
-        text-decoration: underline;
         margin-top: 5vh;
         text-align: center;
+        margin-bottom: 5vh;
     }
 
     &>section {
@@ -109,17 +131,60 @@ main {
         align-items: center;
         gap: 10px;
 
+
         &>div {
             width: 800px;
             height: 500px;
             background-color: rgb(32, 32, 32);
+            background: linear-gradient(rgb(60, 60, 60), black);
         }
 
         &>article {
             width: 800px;
             height: 500px;
-            background-color: rgba(129, 129, 129, 0.252);
+            background-color: rgba(129, 129, 129, 0.021);
             font-size: 30px;
+        }
+    }
+}
+
+.one {
+    &>article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>h2 {
+            border-bottom: 1px solid azure;
+            font-size: 50px;
+            width: inherit;
+            text-align: center;
+        }
+
+        &>p {
+            width: 500px;
+            margin-top: 5%;
+        }
+    }
+}
+
+
+.two {
+    &>article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>h2 {
+            border-bottom: 1px solid azure;
+            font-size: 50px;
+            width: inherit;
+            text-align: center;
+        }
+
+        &>p {
+            width: 500px;
+            margin-top: 5%;
         }
     }
 }
@@ -129,9 +194,82 @@ main {
     align-items: center;
     justify-content: center;
     font-size: 50px;
+    border-radius: 10px;
 }
 
 .project-image:hover {
     animation: scaleUp 0.1s ease forwards;
+    transition: 1s ease-in forwards;
+    border: 2px azure solid;
+    box-shadow: 0 0 5px 0 azure;
 }
 
+#budget-calc {
+    background-size: cover;
+    background-position: center;
+}
+
+#bio-shield {
+    background-size: cover;
+    background-position: center;
+}
+
+/* budget calc page */
+
+#budget-calc-main {
+    display: flex;
+    &>section {
+
+
+        &>#calc-demo {
+
+
+            display: flex;
+            justify-content: center;
+            &>img {
+                width: clamp(1000px, 10%, 1000px);
+            }
+        }
+
+        &>.text {
+            &>.Technology {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
+                &>img {
+                    width: 200px;
+                    height: 250px;
+                }
+            }
+
+            &>.concepts-learned {
+                width: 800px;
+                height: 200px;
+                font-size: 20px;
+
+                display: flex;
+                justify-self: center;
+                align-self: center;
+                gap: 5vh;
+            }
+
+            &>.problems-solutions {
+                display: flex;
+                flex-direction: column;
+                &>p {
+                    font-size: 40px;
+                }
+
+                &>ul {
+                    list-style-position: inside;
+                }
+            }
+
+            &>.habits-of-mind {
+                display: flex;
+            }
+        }
+
+    }
+}
