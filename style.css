@@ -18,6 +18,17 @@
     }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -136,11 +147,15 @@ main {
         align-items: center;
         gap: clamp(10px, 2vw, 20px);
 
+        animation: fadeIn 1s ease forwards;
+        animation-timeline: view();
+        animation: scroll();
+
         &>div {
             width: clamp(100px, 35vw, 800px);
             height: clamp(100px, 20vw, 800px);
             background-color: rgb(32, 32, 32);
-            background: linear-gradient(rgb(24, 24, 24), black);
+            background: linear-gradient(rgb(50, 50, 50), black);
         }
 
         &>article {
@@ -234,7 +249,7 @@ main {
     background-position: center;
 
     &>img {
-        width: clamp(50px, 5vw, 500px);
+        width: clamp(10px, 5vw, 500px);
     }
 }
 
@@ -264,11 +279,13 @@ main {
         width: clamp(50px, 15vw, 300px);
     }
 }
+
 /* budget calc page */
 
 #budget-calc-main {
     display: flex;
     height: fit-content;
+
     &>section {
 
         &>#calc-demo {
@@ -640,7 +657,7 @@ main {
         &>section {
             width: clamp(250px, 400px, 600px);
             height: 400px;
-            background: linear-gradient(rgb(108, 108, 108), rgb(34, 34, 34));
+            background: linear-gradient(rgb(108, 108, 108), rgb(0, 0, 0));
             text-align: center;
             border-radius: 10px;
 
@@ -684,4 +701,9 @@ main {
         }
 
     }
+}
+
+#pdf {
+    align-self: flex-start;
+    text-decoration: underline;
 }
