@@ -19,14 +19,15 @@
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 * {
@@ -142,7 +143,7 @@ main {
 
     &>section {
         display: flex;
-        width: clamp(300px, 95vw, 1500px);
+        width: fit-content;
         height: clamp(250px, 40vw, 500px);
         align-items: center;
         gap: clamp(10px, 2vw, 20px);
@@ -152,8 +153,8 @@ main {
         animation: scroll();
 
         &>div {
-            width: clamp(100px, 35vw, 800px);
-            height: clamp(100px, 20vw, 800px);
+            width: clamp(300px, 35vw, 800px);
+            height: clamp(300px, 20vw, 800px);
             background-color: rgb(32, 32, 32);
             background: linear-gradient(rgb(50, 50, 50), black);
         }
@@ -258,9 +259,18 @@ main {
     background-position: center;
 
     &>img {
-        width: clamp(50px, 15vw, 300px);
+        width: clamp(50px, 105vw, 300px);
     }
 }
+
+#bio-shield {
+
+    &>img {
+        width: clamp(50px, 15vw, 300px);
+
+    }
+}
+
 
 #power-essay {
     background-size: cover;
@@ -436,13 +446,14 @@ main {
 
     &>section {
 
-        &>#-demo {
+        &>#fcz-app-demo {
             display: flex;
             justify-content: center;
             margin-top: 2vh;
+            gap: 2vw;
 
             &>img {
-                width: clamp(300px, 80%, 1000px);
+                width: clamp(300px, 50vw, 300px);
             }
         }
 
@@ -460,8 +471,11 @@ main {
             }
 
             &>.concepts-learned {
+                border: 1px solid azure;
+                border-radius: 10px;
+                padding: 2vw;
                 width: clamp(300px, 80%, 800px);
-                height: clamp(150px, 25vw, 200px);
+                height: fit-content;
                 font-size: clamp(14px, 1.5vw, 20px);
                 justify-content: center;
                 display: flex;
@@ -471,34 +485,53 @@ main {
             }
 
             &>.problems-solutions {
+                margin-top: 3vh;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-self: center;
                 width: clamp(100px, 70vw, 1000px);
                 height: 500px;
-                gap: 3vh;
+                gap: 1vh;
 
                 &>p {
                     font-size: clamp(20px, 10vw, 70px);
                 }
 
-                &>ul {
-                    list-style-position: inside;
+                &>section {
+                    border: 1px solid azure;
+                    padding: 2vw;
+                    border-radius: 10px;
 
-                    &>li {
-                        font-size: clamp(1px, 10vw, 25px);
+                    &>ul {
+                        list-style-position: inside;
+
+                        &>li {
+                            font-size: clamp(1px, 10vw, 25px);
+                            margin-bottom: 2vh;
+                        }
                     }
                 }
             }
 
             &>.habits-of-mind {
+                margin-top: 3vh;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                width: clamp(100px, 70vw, 1000px);
-                justify-self: center;
-                font-size: clamp(1px, 100vw, 20px);
+                flex-direction: column;
+                text-align: center;
+                gap: 3vh;
+
+                &>h5 {
+                    font-size: 30px;
+                }
+
+                &>section {
+                    text-align: center;
+                    align-self: center;
+                    justify-content: center;
+                    display: flex;
+                    width: clamp(300px, 50vw, 1000px);
+                }
 
             }
         }
@@ -706,4 +739,239 @@ main {
 #pdf {
     align-self: flex-start;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+
+    .one {
+        flex-direction: column;
+    }
+
+    .two {
+        flex-direction: column-reverse;
+    }
+}
+
+#bio-shield-main {
+    &>section {
+        &>.text {
+
+            &>.challengesandsolutions {
+                border: solid 1px azure;
+                border-radius: 10px;
+                padding: clamp(10px, 10vw, 100px);
+                justify-self: center;
+                width: clamp(300px, 50vw, 500px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2vh;
+
+                &>p {
+                    text-align: center;
+                    font-size: 30px;
+                }
+
+            }
+
+            &>.habits-of-mind {
+
+
+                margin-top: 5vh;
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+
+                &>h5 {
+                    font-size: 30px;
+                }
+
+                &>section {
+                    display: flex;
+                    gap: 3vw;
+
+                    &>p {
+                        border: solid 1px azure;
+                        border-radius: 10px;
+                        padding: clamp(10px, 5vw, 30px);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+#power-essay-main {
+    display: flex;
+    height: fit-content;
+
+    &>section {
+
+        &>#power-essay-demo {
+            display: flex;
+            justify-content: center;
+            margin-top: 2vh;
+
+            &>img {
+                width: clamp(300px, 80%, 1000px);
+            }
+        }
+
+        &>.text {
+
+            &>.concepts-learned {
+                width: clamp(300px, 80%, 800px);
+                height: clamp(150px, 25vw, 200px);
+                font-size: clamp(14px, 1.5vw, 20px);
+                justify-content: center;
+                display: flex;
+                justify-self: center;
+                align-self: center;
+                gap: 5vh;
+            }
+
+            &>.problems-solutions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-self: center;
+                width: clamp(100px, 70vw, 1000px);
+                height: 500px;
+                gap: 3vh;
+
+                &>p {
+                    font-size: clamp(20px, 10vw, 70px);
+                }
+
+                &>ul {
+                    list-style-position: inside;
+
+                    &>li {
+                        font-size: clamp(1px, 10vw, 25px);
+                        margin-bottom: 2vh;
+                    }
+                }
+            }
+
+            &>.habits-of-mind {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: clamp(100px, 70vw, 1000px);
+                justify-self: center;
+                font-size: clamp(1px, 100vw, 20px);
+                gap: 2vh;
+
+                &>section {
+                    border: 1px solid azure;
+                    border-radius: 10px;
+                    padding: 2vw;
+                }
+
+
+            }
+        }
+    }
+}
+
+#research-paper-main {
+    display: flex;
+    height: fit-content;
+
+    &>section {
+
+        &>#research-paper-demo {
+            display: flex;
+            justify-content: center;
+            margin-top: 2vh;
+
+            &>img {
+                width: clamp(300px, 80%, 1000px);
+            }
+        }
+
+        &>.text {
+
+            &>.concepts-learned {
+                width: clamp(300px, 80%, 800px);
+                height: clamp(150px, 25vw, 200px);
+                font-size: clamp(14px, 1.5vw, 20px);
+                justify-content: center;
+                display: flex;
+                justify-self: center;
+                align-self: center;
+                gap: 5vh;
+            }
+
+            &>.problems-solutions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-self: center;
+                width: clamp(100px, 70vw, 1000px);
+                height: 500px;
+                gap: 3vh;
+
+                &>p {
+                    font-size: clamp(20px, 10vw, 70px);
+                }
+
+                &>ul {
+                    list-style-position: inside;
+
+                    &>li {
+                        font-size: clamp(1px, 10vw, 25px);
+                        margin-bottom: 2vh;
+                    }
+                }
+            }
+
+            &>.habits-of-mind {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: clamp(100px, 70vw, 1000px);
+                justify-self: center;
+                font-size: clamp(1px, 100vw, 20px);
+                gap: 2vh;
+
+                &>h5 {
+                    font-size: 30px;
+                }
+
+                &>section {
+                    border: 1px solid azure;
+                    border-radius: 10px;
+                    padding: 2vw;
+                }
+
+
+            }
+        }
+    }
+}
+
+#plan-main {
+    &>section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+
+        &>h3 {
+            font-size: 40px;
+            margin-top: 2vh;
+        }
+
+        &>article {
+            &>p {
+                margin-bottom: 2vh;
+            }
+        }
+    }
 }
