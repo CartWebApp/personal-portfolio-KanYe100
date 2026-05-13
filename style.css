@@ -419,7 +419,7 @@ main {
 
     &>section {
 
-        &>#fcz-app-demo {
+        &>#-demo {
             display: flex;
             justify-content: center;
             margin-top: 2vh;
